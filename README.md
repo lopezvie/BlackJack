@@ -1,21 +1,4 @@
 
-        <style>
-            table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-
-            td, th {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-            }
-
-            tr:nth-child(even) {
-                background-color: #dddddd;
-            }
-        </style>
         <h1>BLACKJACK PROJECT</h1>
         <h2><strong>Team name:</strong> BlackJack.<br><br><strong>Members:</strong> Omar Lopez Vie.</h2>
         <br><br>This project simulates the blackjack game. It also integrates the player’s probabilities of advantage against the dealer's hand and the probabilities of the player getting the needed value to add up to 21 as his next card.</p>
@@ -47,7 +30,7 @@
         <tr><td>11. If one of the parties has exceeded 21, show results.</td></tr>
     </table>
     <br><div align="center"><img src="class.PNG" height="350" width="350"></div>
-</body>
+
 <footer>
     <div align="center"><p>Posted by: Omar Lopez Vie <a href="http://www.linkedin.com/in/omar-lopez-vie/"><img src="link.png" alt="Linkedin.com" height="50" width="50"></a>.</p></div>
 </footer>
