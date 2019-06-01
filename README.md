@@ -1,22 +1,5 @@
-#
+##
 <body>
-<style>
-table {
-font-family: arial, sans-serif;
-border-collapse: collapse;
-width: 100%;
-}
-
-td, th {
-border: 1px solid #dddddd;
-text-align: left;
-padding: 8px;
-}
-
-tr:nth-child(even) {
-background-color: #dddddd;
-}
-</style>
 <h1>BLACKJACK PROJECT</h1>
 <h2><strong>Team name:</strong> BlackJack.<br><br><strong>Members:</strong> Omar Lopez Vie.</h2>
 <br><br>This project simulates the blackjack game. It also integrates the player’s probabilities of advantage against the dealer's hand and the probabilities of the player getting the needed value to add up to 21 as his next card.</p>
