@@ -7,6 +7,8 @@
 using namespace std;
 const int NUMOFSUITS = 4;
 const int NUMPERSUIT = 13;
+const float ADVATAGE [NUMPERSUIT] = {9.8f, 13.4f, 18.0f, 23.2f, 23.9f, 14.3f, 5.4f, -4.3f,
+    -16.9f, -16.9f, -16.9f, -16.9f, -16.0f};
 const int VALUES [NUMPERSUIT] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
 const string NAMES [NUMPERSUIT] = {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
 const string SUITS [NUMOFSUITS] = {"HEARTS", "DIAMONDS", "CLUBS", "SPADES"};
@@ -98,34 +100,58 @@ public:
                 cout << "\n\n" << players[0].name << "\'s hand: " << players[0].mycards[1].name << " of " << players[0].mycards[1].suit << " and [HIDDEN CARD]";
                 cout << "\n\n\tPress 1 and enter to play this hand or press any other number and enter to quit:  ";
                 cin >> choice2;
-                if (choice2 != 1) {cout << "\n\n\tOK, BYE..."; break;}
+                if (choice2 != 1) {
+                    cout << "\n\n\tOK, BYE...";
+                    break;
+                }
                 players[1].mycards[0] = newDeck.deliver();
                 players[1].mycards[1] = newDeck.deliver();
                 players[1].count = players[1].mycards[0].value + players[1].mycards[1].value;
                 cout << "\n\nPlayer: " << players[1].name << "(YOU)\nCount: " << players[1].count << "\nStatus: " << players[1].status[1] << "\nBank: $" << fixed << std::setprecision(2) << players[1].bet;
                 cout << "\n\n" << players[1].name << "\'s hand: " << players[1].mycards[0].name << " of " << players[1].mycards[0].suit << " and " << players[1].mycards[1].name << " of " << players[1].mycards[1].suit;
                 lucky = 21 - players[1].count;
-                if(lucky > 10) {
+                if (lucky > 10) {
                     lucky = 10;
                 }
-                for(int i = 0; i < 2; ++i) {
-                    if((players[0].mycards[i].value == lucky) || (players[1].mycards[i].value == lucky))
-                    {
+                for (int i = 0; i < 2; ++i) {
+                    if ((players[0].mycards[i].value == lucky) || (players[1].mycards[i].value == lucky)) {
                         numOfLucky++;
                     }
                 }
                 probability = 4 - numOfLucky;
                 probability /= (52 - showing);
-                cout << "\n\n\t\tThe probability of you getting " << lucky << " as your next card is " << fixed << std::setprecision(10) << (probability * 100) << "%.";
+                cout << "\n\n\t\tYour advantage vs. the dealer based on the dealer's up card:  " << fixed << std::setprecision(2) << playerAdvantage(players[0].mycards[1].value) << "%.";
+                cout << "\n\n\t\tThe probability of you getting " << lucky << " as your next card is " << fixed << std::setprecision(3) << (probability * 100) << "%.";
                 cout << "\n\n\tPress 1 and enter to play this hand or press any other number and enter to quit:  ";
                 cin >> choice2;
-                if (choice2 == 1) { handlePlay(newDeck, 2);} else {cout << "\n\n\tOK, BYE..."; break;}
+                if (choice2 == 1) {
+                    handlePlay(newDeck, 2);
+                } else {
+                    cout << "\n\n\tOK, BYE...";
+                    break;
+                }
                 break;
             case 2:
                 mainMenu(newDeck);
                 break;
             default: mainMenu(newDeck);
         }
+    }
+
+    float playerAdvantage(int card) {
+        float adv = 0;
+        for (int i = 0; i < NUMPERSUIT; ++i) {
+            if (card == VALUES[i]) {
+                if (VALUES[i] == 1) {
+                    adv = -16.0f;
+                } else if (VALUES[i] == 8) {
+                    adv = -16.9f;
+                } else {
+                    adv = ADVATAGE[i - 1];
+                }
+            }
+        }
+        return adv;
     }
 
     void handlePlay(deck newDeck, int c) {
@@ -151,18 +177,18 @@ public:
                     cout << players[1].mycards[i].name << " of " << players[1].mycards[i].suit << "\n";
                 }
                 lucky = 21 - players[1].count;
-                if(lucky > 10) {
+                if (lucky > 10) {
                     lucky = 10;
                 }
-                for(int i = 0; i < cards; ++i) {
-                    if((players[0].mycards[i].value == lucky) || (players[1].mycards[i].value == lucky))
-                    {
+                for (int i = 0; i < cards; ++i) {
+                    if ((players[0].mycards[i].value == lucky) || (players[1].mycards[i].value == lucky)) {
                         numOfLucky++;
                     }
                 }
                 probability = 4 - numOfLucky;
-                probability = probability/(52 - showing);
-                cout << "\n\n\t\tThe probability of you getting " << lucky << " as your next card is " << fixed << std::setprecision(10) << (probability * 100) << "%.";
+                probability = probability / (52 - showing);
+                cout << "\n\n\t\tYour advantage vs. the dealer based on the dealer's up card:  " << fixed << std::setprecision(2) << playerAdvantage(players[0].mycards[1].value) << "%.";
+                cout << "\n\n\t\tThe probability of you getting " << lucky << " as your next card is " << fixed << std::setprecision(3) << (probability * 100) << "%.";
                 if (players[0].count >= 21 || players[1].count >= 21) break;
                 else handlePlay(newDeck, cards);
             }
@@ -240,4 +266,5 @@ int main(int argc, char** argv) {
 
     return 0;
 }
+
 
