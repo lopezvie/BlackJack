@@ -1,5 +1,5 @@
 
-        #BLACKJACK PROJECT#
+#BLACKJACK PROJECT#
         ##<strong>Team name:</strong> BlackJack.<br><br><strong>Members:</strong> Omar Lopez Vie.##
         <br><br>This project simulates the blackjack game. It also integrates the player’s probabilities of advantage against the dealer's hand and the probabilities of the player getting the needed value to add up to 21 as his next card.</p>
     <p><br>To calculate the probability for the next card to be the needed value for the player to add up to 21 is based on the following formula:</p><br><br>
