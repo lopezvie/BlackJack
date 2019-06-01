@@ -1,21 +1,21 @@
 
 #BLACKJACK PROJECT#
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>BLACKJACK</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-  <style>
-            table {
-                font-family: arial, sans-serif;
- border-collapse: collapse;
- width: 100%;
+<head>
+<title>BLACKJACK</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<style>
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
 }
 
- td, th {
+td, th {
 border: 1px solid #dddddd;
 text-align: left;
 padding: 8px;
@@ -28,8 +28,8 @@ background-color: #dddddd;
 <h1>BLACKJACK PROJECT</h1>
 <h2><strong>Team name:</strong> BlackJack.<br><br><strong>Members:</strong> Omar Lopez Vie.</h2>
 <br><br>This project simulates the blackjack game. It also integrates the player’s probabilities of advantage against the dealer's hand and the probabilities of the player getting the needed value to add up to 21 as his next card.</p>
-    <p><br>To calculate the probability for the next card to be the needed value for the player to add up to 21 is based on the following formula:</p><br><br>
-    <div align="center"><img src="formula.PNG" alt="Probability Formula."height="250" width="350"></div><p><strong><br>nx = desired card value.<br>nv = number of cards showing.</strong></p>
+<p><br>To calculate the probability for the next card to be the needed value for the player to add up to 21 is based on the following formula:</p><br><br>
+<div align="center"><img src="formula.PNG" alt="Probability Formula."height="250" width="350"></div><p><strong><br>nx = desired card value.<br>nv = number of cards showing.</strong></p>
     <p><br>To calculate the probability of advantage that the player has against the dealers showing cards is calculated by the following table:</p>
     <br><div align="center"><img src="playersadventage.PNG" alt="Advantage Probability Based on Dealer's first showing card." height="350" width="350"></div>
     <h2>Program objectives?</h2><h3>Explain how your program is interacting with the user and its purpose.</h3><br><p>The objective of this program is to simulate the game of blackjack and integrating probability concepts to the game. The program interacts with the user by asking the user to choose different options throughout the game. Probabilities are shown beforehand, so the user can consider them for her/his next decision.</p>
