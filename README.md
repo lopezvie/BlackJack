@@ -1,6 +1,32 @@
 
 #BLACKJACK PROJECT#
-        ##<strong>Team name:</strong> BlackJack.<br><br><strong>Members:</strong> Omar Lopez Vie.##
+        <!DOCTYPE html>
+<html>
+    <head>
+        <title>BLACKJACK</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+  <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+ td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+ tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+   <h1>BLACKJACK PROJECT</h1>
+        <h2><strong>Team name:</strong> BlackJack.<br><br><strong>Members:</strong> Omar Lopez Vie.</h2>
         <br><br>This project simulates the blackjack game. It also integrates the player’s probabilities of advantage against the dealer's hand and the probabilities of the player getting the needed value to add up to 21 as his next card.</p>
     <p><br>To calculate the probability for the next card to be the needed value for the player to add up to 21 is based on the following formula:</p><br><br>
     <div align="center"><img src="formula.PNG" alt="Probability Formula."height="250" width="350"></div><p><strong><br>nx = desired card value.<br>nv = number of cards showing.</strong></p>
